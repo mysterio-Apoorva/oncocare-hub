@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 
-const API_BASE = "http://localhost:8000";
+
 
 const GENE_PRESETS = {
   "Lung Adenocarcinoma": { EGFR: 9.2, KRAS: 6.5, ALK: 4.1, TP53: 7.8, MET: 5.3, STK11: 2.1, BRAF: 4.0 },
@@ -49,7 +49,7 @@ function getChatResponse(msg) {
 
 // ─── Mock API response for demo without backend ───────────────────────────────
 function getMockReport(patientData) {
-  const { biomarkers = {}, symptoms = [], cancer_type_hint } = patientData;
+const { biomarkers = {}, symptoms = [] } = patientData;
   const genes = Object.keys(biomarkers);
 
   let tcga = "TCGA-LUAD";
